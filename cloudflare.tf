@@ -1,6 +1,5 @@
 provider "cloudflare" {
   version = "~> 2.0"
-  email   = "var.cloudflare_email"
   account_id = "var.cloudflare_account_id"
 }
 

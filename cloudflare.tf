@@ -6,7 +6,7 @@ provider "cloudflare" {
 }
 
 resource "cloudflare_zone_settings_override" "smugposting-com" {
-  zone_id = "0dd19e161132372b7086a432579d640b"
+  zone_id = "var.cloudflare_zone_id"
   settings {
     always_online            = "off"
     always_use_https         = "on"
@@ -18,7 +18,7 @@ resource "cloudflare_zone_settings_override" "smugposting-com" {
 }
 
 resource "cloudflare_record" "www" {
-  zone_id = "0dd19e161132372b7086a432579d640b"
+  zone_id = "var.cloudflare_zone_id"
   name = "httpbin"
   value = "35.209.9.25"
   type = "A"

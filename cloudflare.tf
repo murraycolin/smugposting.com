@@ -3,10 +3,6 @@ provider "cloudflare" {
   # token pulled from $CLOUDFLARE_TOKEN
 }
 
-variable "domain" {
-  default = "smugposting.com"
-}
-
 # resource "cloudflare_zone" "smugposting-com" {
 #  zone       = "smugposting.com"
 #  jump_start = false
@@ -15,7 +11,7 @@ variable "domain" {
 # }
 
 resource "cloudflare_zone_settings_override" "smugposting-com" {
-  name = var.domain
+  zone_id = "0dd19e161132372b7086a432579d640b"
   settings {
     always_online            = "off"
     always_use_https         = "on"
@@ -26,7 +22,7 @@ resource "cloudflare_zone_settings_override" "smugposting-com" {
   }
 }
 resource "cloudflare_record" "Www" {
-  domain = var.domain
+  zone_id "0dd19e161132372b7086a432579d640b"
   name = "httpbin"
   value = "35.209.9.25"
   type = "A"

@@ -1,11 +1,10 @@
 provider "cloudflare" {
   version = "~> 2.0"
   email   = "var.cloudflare_email"
-  api_key = "var.cloudflare_api_key"
   account_id = "var.cloudflare_account_id"
 }
 
-resource "cloudflare_zone_settings_override" "smugposting-com" {
+resource "cloudflare_zone_settings_override" "domain" {
   zone_id = "var.cloudflare_zone_id"
   settings {
     always_online            = "off"

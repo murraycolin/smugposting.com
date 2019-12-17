@@ -2,14 +2,8 @@ provider "cloudflare" {
   version = "~> 2.0"
   email   = "var.cloudflare_email"
   api_key = "var.cloudflare_api_key"
+  account_id = "var.cloudflare_account_id"
 }
-
-# resource "cloudflare_zone" "smugposting-com" {
-#  zone       = "smugposting.com"
-#  jump_start = false
-#  plan       = "enterprise"
-#  type       = "full"
-# }
 
 resource "cloudflare_zone_settings_override" "smugposting-com" {
   zone_id = "0dd19e161132372b7086a432579d640b"

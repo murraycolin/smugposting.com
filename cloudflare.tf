@@ -21,7 +21,8 @@ resource "cloudflare_zone_settings_override" "smugposting-com" {
     waf                      = "on"
   }
 }
-resource "cloudflare_record" "Www" {
+
+resource "cloudflare_record" "www" {
   zone_id "0dd19e161132372b7086a432579d640b"
   name = "httpbin"
   value = "35.209.9.25"
